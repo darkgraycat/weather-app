@@ -1,26 +1,41 @@
-import React from 'react'
-import './App.scss'
-import cat from '../assets/img/dgcat_ava.png'
+import React, { useEffect, useState } from 'react'
+import Card from './components/Card.jsx'
+
+import './App.scss';
 
 const App = () => {
+
+  const city = 'Kyiv'
+  const key = '686143eef86b19c73062057b087e8085'
+  const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric&lang=ua`
+
+  const [isReady, setIsReady] = useState(false)
+  const [response, setResponse] = useState({})
+
+  useEffect(() => {
+
+    fetch(URL)
+      .then(r => r.json())
+      .then(d => {
+        setResponse(d)
+        setIsReady(true)
+      })
+
+  }, [])
+
   return (
-    <div className='App'>
-      <h1>Minimal React App</h1>
-      <img src={cat} alt='cat' />
-      <h4>Includes:</h4>
-      <ul>
-        <li>sass-loader</li>
-        <li>file-loader</li>
-      </ul>
-      <h4>Enjoy!</h4>
-      <p>
-        Please give me feedback <a href="https://t.me/darkgraycat">Telegram</a>
-      </p>
-      <p>
-        If you have a problem: <a href="https://github.com/darkgraycat/jarb/issues">Issues</a>
-      </p>
+    <div className="App">
+
+      {
+        isReady
+          ? <Card title={response.name} weather={response.main} />
+          : <p>no data</p>
+      }
+
     </div>
   )
 }
 
-export default App
+export default App;
+
+
