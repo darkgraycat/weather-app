@@ -5,7 +5,24 @@ import './App.scss';
 
 const App = () => {
 
-  const citiesNames = ['Kyiv', 'Lviv', 'Kharkiv', 'Odesa', 'Ivano-Frankivsk', 'Mariupol']
+  const citiesNames = [
+    'Kyiv',
+    'Kharkiv',
+    'Odesa',
+    'Dnipro',
+    'Donetsk',
+    'Zaporizhzhia',
+    'Lviv',
+    'Kryvyi Rih',
+    'Mykolaiv',
+    'Mariupol',
+    'Ivano-Frankivsk',
+    'Luhansk',
+    'Vinnytsia',
+    'Simferopol',
+    'Chernihiv',
+    'Poltava',
+  ]
 
   return (
     <div className="App">

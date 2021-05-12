@@ -22,9 +22,6 @@ const GUI_ICONS = {
 
 const Card = ({ name, main, weather, wind }) => {
 
-  console.log(name, main, weather, wind)
-
-
   const { temp, humidity, pressure } = main
   const weatherType = weather[0].main
   const { speed } = wind
