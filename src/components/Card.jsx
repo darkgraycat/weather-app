@@ -1,10 +1,9 @@
 import React from 'react'
 import './Card.scss'
 import './weather-icons.css'
-import './weather-icons-wind.css'
 
 const WEATHER_ICONS = {
-  'Clear': 'wi wi-sunny',
+  'Clear': 'wi wi-day-sunny',
   'Clouds': 'wi wi-cloudy',
   'Rain': 'wi wi-rain',
   'Snow': 'wi wi-snow',
@@ -14,43 +13,43 @@ const WEATHER_ICONS = {
   DEFAULT: 'wi wi-day-cloudy'
 }
 
+const GUI_ICONS = {
+  TEMP: 'wi wi-thermometer',
+  WIND: 'wi wi-strong-wind',
+  HUMIDITY: 'wi wi-humidity',
+  PRESSURE: 'wi wi-barometer'
+}
+
 const Card = ({ title, main, weather, wind }) => {
 
   const { temp, humidity, pressure } = main
   const weatherType = weather[0].main
-  const { speed, deg } = wind
+  const { speed } = wind
 
-  console.log('wind', deg)
-
-  //towards-0-deg
+  const calcBackgroundColor = () => {
+    const MAX_COLOR = 200
+    const r = (Math.random() * MAX_COLOR) << 0
+    const g = (Math.random() * MAX_COLOR) << 0
+    const b = (Math.random() * MAX_COLOR) << 0
+    return `rgba(${r}, ${g}, ${b}, 1.0)`
+  }
 
   return (
-    <div className='Card'>
+    <div className='Card' style={{
+      backgroundColor: calcBackgroundColor()
+    }}>
       <div className='Card__title'>
-        <i className={`wi wi-${WEATHER_ICONS[weatherType]}`} />
-        {title}
+        <span>{title}</span>
+        <i className={WEATHER_ICONS[weatherType] || WEATHER_ICONS.DEFAULT} />
       </div>
       <div className='Card__description'>
-
-        <div>
-          Wind
-          <i className={`wi wi-wind towards-${deg}-deg`} />
-          Speed: {speed} m\sec
-        </div>
-
-        <div><i className='wi wi-thermometer' /> {temp}&deg;C</div>
-        <div><i className='wi wi-humidity' /> {humidity}%</div>
-        <div><i className='wi wi-barometer' /> {(pressure / 1.333) << 0} mmhg</div>
+        <div><i className={GUI_ICONS.WIND} />{speed} m\s</div>
+        <div><i className={GUI_ICONS.TEMP} /> {temp << 0}&deg;C</div>
+        <div><i className={GUI_ICONS.HUMIDITY} /> {humidity << 0}%</div>
+        <div><i className={GUI_ICONS.PRESSURE} /> {(pressure / 1.333) << 0}mm</div>
       </div>
     </div>
   )
 }
 
 export default Card
-
-/*
-
-
-
-
-*/

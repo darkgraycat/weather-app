@@ -5,6 +5,17 @@
   align-items: $align;
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #88f;
+}
+
 .App {
   @include flex(column, space-around, center);
   margin: 0 auto;
@@ -21,8 +32,18 @@
 
 .spinner {
   display: inline-block;
-  width: 100px;
-  height: 100px;
-  // &::before
+  width: 50px;
+  height: 50px;
+  border: 10px solid rgba(255,255,255,.1);
+  border-radius: 50%;
+  border-top-color: #fff;
+  box-sizing: border-box;
+  animation: spinner 1s linear infinite;
+
+  @keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
 
