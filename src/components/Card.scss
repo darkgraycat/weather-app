@@ -2,10 +2,18 @@
 
 .Card {
 
+  display: flex;
+  flex-direction: column;
+  background-color: #ff8;  
+  padding: 20px;
+
   font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
 
-  &__title {}
+  &__title {
+    font-size: 2em;
+  }
   &__description {
-
+    font-size: 0.8em;
   }
 }

@@ -5,7 +5,7 @@ import './App.scss';
 
 const App = () => {
 
-  const city = 'Kyiv'
+  const city = 'Mariupol'
   const key = '686143eef86b19c73062057b087e8085'
   const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric&lang=ua`
 
@@ -28,8 +28,8 @@ const App = () => {
 
       {
         isReady
-          ? <Card title={response.name} weather={response.main} />
-          : <p>no data</p>
+          ? <Card title={response.name} main={response.main} weather={response.weather} wind={response.wind} />
+          : <div className='spinner'></div>
       }
 
     </div>
