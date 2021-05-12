@@ -20,8 +20,23 @@ body, html {
 }
 
 #root {
-  background: rgb(131,58,180);
-  background: linear-gradient(42deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: -1;
+    background: rgb(131,58,180);
+    background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
+    animation: rotate 10s linear infinite;
+  }
 }
 
 .App {
@@ -50,9 +65,9 @@ body, html {
   border-radius: 50%;
   border-top-color: #fff;
   box-sizing: border-box;
-  animation: spinner 1s linear infinite;
+  animation: rotate 1s linear infinite;
 
-  @keyframes spinner {
+  @keyframes rotate {
     to {
       transform: rotate(360deg);
     }
