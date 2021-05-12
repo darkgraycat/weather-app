@@ -1,9 +1,4 @@
-@mixin flex($direction, $justify, $align) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
-}
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
 body, html {
   margin: 0;
@@ -13,21 +8,28 @@ body, html {
 #root {
   width: 100vw;
   height: 100vh;
-  background-color: #88f;
+  max-width: 100%;
+
+  background: rgb(131,58,180);
+  background: linear-gradient(42deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
 }
 
 .App {
-  @include flex(column, space-around, center);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
   margin: 0 auto;
 
   h1 {
-    font-family: monospace;
+    font-family: 'Ubuntu', sans-serif;
+    text-shadow: 2px 2px 4px #0008;
+    letter-spacing: 2px;
+    color: #fffd;
+    font-weight: 400;
   }
 
-  img {
-    width: 100px;
-    height: auto;
-  }
 }
 
 .spinner {

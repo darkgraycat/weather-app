@@ -20,18 +20,21 @@ const GUI_ICONS = {
   PRESSURE: 'wi wi-barometer'
 }
 
-const Card = ({ title, main, weather, wind }) => {
+const Card = ({ name, main, weather, wind }) => {
+
+  console.log(name, main, weather, wind)
+
 
   const { temp, humidity, pressure } = main
   const weatherType = weather[0].main
   const { speed } = wind
 
   const calcBackgroundColor = () => {
-    const MAX_COLOR = 200
+    const MAX_COLOR = 255
     const r = (Math.random() * MAX_COLOR) << 0
     const g = (Math.random() * MAX_COLOR) << 0
     const b = (Math.random() * MAX_COLOR) << 0
-    return `rgba(${r}, ${g}, ${b}, 1.0)`
+    return `rgba(${r}, ${g}, ${b}, 0.2)`
   }
 
   return (
@@ -39,7 +42,7 @@ const Card = ({ title, main, weather, wind }) => {
       backgroundColor: calcBackgroundColor()
     }}>
       <div className='Card__title'>
-        <span>{title}</span>
+        <span>{name}</span>
         <i className={WEATHER_ICONS[weatherType] || WEATHER_ICONS.DEFAULT} />
       </div>
       <div className='Card__description'>
