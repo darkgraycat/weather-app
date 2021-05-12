@@ -27,6 +27,9 @@
     span {
       font-size: 1.4em;
       text-decoration: underline;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     i {
       font-size: 1.8em;
