@@ -27,6 +27,8 @@ const App = () => {
   return (
     <div className="App">
 
+      <div className="animated-bg"></div>
+
       <h1>React weather forecast</h1>
 
       <CardContainer citiesNames={citiesNames} />
