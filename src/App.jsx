@@ -27,11 +27,18 @@ const App = () => {
   return (
     <div className="App">
 
+      <div className="author">
+        by dark<span style={{ color: '#bbb4' }}>gray</span>cat
+        <a href="https://t.me/darkgraycat">telegram</a>
+        <a href="https://github.com/darkgraycat">github</a>
+      </div>
+
       <div className="animated-bg"></div>
 
       <h1>React weather forecast</h1>
 
       <CardContainer citiesNames={citiesNames} />
+
 
     </div>
   )

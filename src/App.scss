@@ -19,10 +19,6 @@ body, html {
 
 }
 
-#root {
-  padding-bottom: 40px;
-}
-
 .animated-bg {
   position: fixed;
   overflow: hidden;
@@ -51,6 +47,7 @@ body, html {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  position: relative;
 
   margin: 0 auto;
 
@@ -61,6 +58,31 @@ body, html {
     color: #fffd;
     font-weight: 400;
     font-size: 3rem;
+  }
+
+  .author {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    text-shadow: 2px 2px 4px #0008;
+    color: #fffd;
+    font-size: 2rem;
+    font-weight: 700;
+    a {
+      font-weight: 400;
+      text-decoration: none;
+      display: block;
+      color: #fff8;
+      line-height: 2rem;
+      &:hover {
+        color: #4ffb;
+      }
+      &::before {
+        content: '\21E8';
+        margin-right: 4px;
+      }
+    }
   }
 }
 
