@@ -1,6 +1,6 @@
-# JUST ANOTHER REACT BOILERPLATE
+# Weather app
 
-### Usage:
-1. Clone repository
-2. Run `npm start`
-3. Open `index.html` with Live Server
+#### Created with
+1. React
+2. Sass
+3. Webpack
