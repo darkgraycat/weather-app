@@ -22,6 +22,17 @@ const App = () => {
     'Simferopol',
     'Chernihiv',
     'Poltava',
+    'Cherkasy',
+    'Chernihiv',
+    'Chernivtsi',
+    'Kherson',
+    'Khmelnytskyi',
+    'Kropyvnytskyi',
+    'Sumy',
+    'Ternopil',
+    'Lutsk',
+    'Uzhhorod',
+    'Zhytomyr'    
   ]
 
   return (
