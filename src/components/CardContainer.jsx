@@ -31,6 +31,7 @@ const CardContainer = ({ citiesNames }) => {
             name={cities[city].name}
             main={cities[city].main}
             weather={cities[city].weather}
+            visibility={cities[city].visibility}
             wind={cities[city].wind} />
           : <div className='spinner' />
       )}
