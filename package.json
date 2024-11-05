@@ -1,24 +1,23 @@
 {
-  "name": "jarb",
-  "version": "1.0.0",
-  "description": "Just another React boilerplate for U my dear friend",
+  "name": "weather-app",
+  "version": "2.0.0",
+  "description": "Simple React app made for educational purposes",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --mode development --watch",
-    "build": "webpack --mode production",
-    "publish": "npm run build && git add . && git commit -m\"publish commit\" && git push origin main"
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/darkgraycat/jarb.git"
+    "url": "git+https://github.com/darkgraycat/weather-app"
   },
   "author": "darkgraycat",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/darkgraycat/jarb/issues"
+    "url": "https://github.com/darkgraycat/weather-app/issues"
   },
-  "homepage": "https://github.com/darkgraycat/jarb#readme",
+  "homepage": "https://github.com/darkgraycat/weather-app#readme",
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/preset-react": "^7.13.13",
