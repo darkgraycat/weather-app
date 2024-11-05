@@ -23,8 +23,11 @@ module.exports = {
         use: ['file-loader']
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        use: ['file-loader']
+        test: /\.(ttf|eot|woff|woff2)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]'
+        }
       },
     ]
   }
